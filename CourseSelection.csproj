@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F82F6176-6207-4C14-8157-C748964AE975}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CourseSelection</RootNamespace>
+    <AssemblyName>CourseSelection</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\FiscaRuntime\addmodules\CourseSelection\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Cells">
+      <HintPath>..\FiscaRuntime\modules\LIB_ASPOSE\Aspose.Cells.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Campus">
+      <HintPath>..\FiscaRuntime\modules\LIB_Campus\Campus.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Campus.Windows">
+      <HintPath>..\FiscaRuntime\modules\LIB_Campus\Campus.Windows.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=9.5.0.1, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FiscaRuntime\components\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="FISCA">
+      <HintPath>..\FiscaRuntime\kernel\FISCA.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.Authentication">
+      <HintPath>..\FiscaRuntime\kernel\FISCA.Authentication.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.Data">
+      <HintPath>..\FiscaRuntime\kernel\FISCA.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.DSAUtil">
+      <HintPath>..\FiscaRuntime\kernel\FISCA.DSAUtil.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.LogAgent">
+      <HintPath>..\FiscaRuntime\kernel\FISCA.LogAgent.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.Permission">
+      <HintPath>..\FiscaRuntime\kernel\FISCA.Permission.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.Presentation">
+      <HintPath>..\FiscaRuntime\kernel\FISCA.Presentation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FISCA.UDT">
+      <HintPath>..\FiscaRuntime\kernel\FISCA.UDT.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="K12.Data">
+      <HintPath>..\FiscaRuntime\modules\LIB_K12DAL\K12.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="K12.Presentation">
+      <HintPath>..\FiscaRuntime\modules\LIB_Campus\K12.Presentation.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLogic\TeachingEvaluationAchiving.cs" />
+    <Compile Include="DataItems\SemesterItem.cs" />
+    <Compile Include="DetailItems\Course_CSIdentity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DetailItems\Course_CSIdentity.Designer.cs">
+      <DependentUpon>Course_CSIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailItems\CSSnapshot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DetailItems\CSSnapshot.Designer.cs">
+      <DependentUpon>CSSnapshot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Event\DeliverActiveRecord.cs" />
+    <Compile Include="Event\DeliverCSAttendEvent.cs" />
+    <Compile Include="Export\CSAttend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\CSAttend.Designer.cs">
+      <DependentUpon>CSAttend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\CSAttendLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\CSAttendLog.Designer.cs">
+      <DependentUpon>CSAttendLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Export\CSNoConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Export\CSNoConfirm.Designer.cs">
+      <DependentUpon>CSNoConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extension\UDT.cs" />
+    <Compile Include="Forms\ConflictCourseManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConflictCourseManagement.Designer.cs">
+      <DependentUpon>ConflictCourseManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CS_Template.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CS_Template.Designer.cs">
+      <DependentUpon>CS_Template.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Email_Credential.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Email_Credential.Designer.cs">
+      <DependentUpon>Email_Credential.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAttendNoChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAttendNoChange.Designer.cs">
+      <DependentUpon>frmAttendNoChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCoursePlanUrl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCoursePlanUrl.Designer.cs">
+      <DependentUpon>frmCoursePlanUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCSAttendManual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCSAttendManual.Designer.cs">
+      <DependentUpon>frmCSAttendManual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCSAttendToSnapshot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCSAttendToSnapshot.Designer.cs">
+      <DependentUpon>frmCSAttendToSnapshot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFAQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFAQ.Designer.cs">
+      <DependentUpon>frmFAQ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFAQ_SingleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFAQ_SingleForm.Designer.cs">
+      <DependentUpon>frmFAQ_SingleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmListViewContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmListViewContainer.Designer.cs">
+      <DependentUpon>frmListViewContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmOpeningInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmOpeningInfo.Designer.cs">
+      <DependentUpon>frmOpeningInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmFilter.Designer.cs">
+      <DependentUpon>frmFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCSAttendToCourseExt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCSAttendToCourseExt.Designer.cs">
+      <DependentUpon>frmCSAttendToCourseExt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAttend_Course.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAttend_Course.Designer.cs">
+      <DependentUpon>frmAttend_Course.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Import\CSAttend_Import.cs" />
+    <Compile Include="Log\BatchLogAgent.cs" />
+    <Compile Include="Log\LogAgent.cs" />
+    <Compile Include="Log\LogValue.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UDT\AchievingRate.cs" />
+    <Compile Include="UDT\WebEMailAccount.cs" />
+    <Compile Include="UDT\TeacherExtVO.cs" />
+    <Compile Include="UDT\CSConfiguration.cs" />
+    <Compile Include="UDT\RegistrationConfirm.cs" />
+    <Compile Include="UDT\SCAttendExt.cs" />
+    <Compile Include="UDT\CSAttend.cs" />
+    <Compile Include="UDT\CSAttendLog.cs" />
+    <Compile Include="UDT\CSAttendSnapshot.cs" />
+    <Compile Include="UDT\CSConflictCourse.cs" />
+    <Compile Include="UDT\CSCourseExt.cs" />
+    <Compile Include="UDT\CSFaq.cs" />
+    <Compile Include="UDT\CSOpeningInfo.cs" />
+    <Compile Include="UDT\FieldAttribute.cs" />
+    <Compile Include="UDT\WebUrls.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DetailItems\Course_CSIdentity.resx">
+      <DependentUpon>Course_CSIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailItems\CSSnapshot.resx">
+      <DependentUpon>CSSnapshot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\CSAttend.resx">
+      <DependentUpon>CSAttend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\CSAttendLog.resx">
+      <DependentUpon>CSAttendLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Export\CSNoConfirm.resx">
+      <DependentUpon>CSNoConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConflictCourseManagement.resx">
+      <DependentUpon>ConflictCourseManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CS_Template.resx">
+      <DependentUpon>CS_Template.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Email_Credential.resx">
+      <DependentUpon>Email_Credential.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAttendNoChange.resx">
+      <DependentUpon>frmAttendNoChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCoursePlanUrl.resx">
+      <DependentUpon>frmCoursePlanUrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCSAttendManual.resx">
+      <DependentUpon>frmCSAttendManual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCSAttendToSnapshot.resx">
+      <DependentUpon>frmCSAttendToSnapshot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFAQ.resx">
+      <DependentUpon>frmFAQ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFAQ_SingleForm.resx">
+      <DependentUpon>frmFAQ_SingleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmListViewContainer.resx">
+      <DependentUpon>frmListViewContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmOpeningInfo.resx">
+      <DependentUpon>frmOpeningInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmFilter.resx">
+      <DependentUpon>frmFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCSAttendToCourseExt.resx">
+      <DependentUpon>frmCSAttendToCourseExt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAttend_Course.resx">
+      <DependentUpon>frmAttend_Course.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\world_upload_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnaddclass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnaddcourse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnaddstudent.image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnaddteacher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btndeleteclass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btndeletecourse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btndeletestudent.image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btndeleteteacher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calc_save_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\course_plan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\courseicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crystal_clear_action_lock-silver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\demographic_reload_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export.image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exportscoreimage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder_zoom_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forbidden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\foreign_key_lock_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\format.xsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graduated_write_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\group_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon64_school_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import.image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\importscoreimage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\network_lock_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paste_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_window_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sandglass_unlock_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchhistory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\studenticon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teachericon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_write_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Agent\Agent.csproj">
+      <Project>{9AEBD730-A5DB-4194-BC0C-2D0AC37F536F}</Project>
+      <Name>Agent</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\BrowserWrapper\BrowserWrapper.vbproj">
+      <Project>{D3F011FF-9EA6-4DFB-845F-49742EC0A623}</Project>
+      <Name>BrowserWrapper</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\EMBA.DocumentValidator\EMBA.DocumentValidator.csproj">
+      <Project>{A108F18E-D035-45F3-B9D4-F1B612C0DAD9}</Project>
+      <Name>EMBA.DocumentValidator</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\EMBA.Export\EMBA.Export.csproj">
+      <Project>{47631CAA-4F81-4458-99A0-31B342803ECB}</Project>
+      <Name>EMBA.Export</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\EMBA.Import\EMBA.Import.csproj">
+      <Project>{3BA76CDE-1BBD-46EA-ACF0-65B1D0344626}</Project>
+      <Name>EMBA.Import</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\EMBA.Validator\EMBA.Validator.csproj">
+      <Project>{FEA37838-0B12-483A-8091-4B1A9A2C9378}</Project>
+      <Name>EMBA.Validator</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Import\CSAttend_Import.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="format.xsl" ?>
+<ValidateRule Name="選課記錄">
+    <DuplicateDetection>
+        <Detector Name="學號+學年度+學期+開課">
+            <Field Name="學號" />
+            <Field Name="學年度" />
+            <Field Name="學期" />
+            <Field Name="開課" />
+        </Detector>
+    </DuplicateDetection>
+    <FieldList>
+        <Field Required="true" Name="學號" Description="學號" >
+            <Validate AutoCorrect="False" Description="「學號」不允許空白。" ErrorType="Error" Validator="不可空白" When="" />
+        </Field>
+        <Field Required="true" Name="開課" Description="開課" >
+            <Validate AutoCorrect="False" Description="「開課」不允許空白。" ErrorType="Error" Validator="不可空白" When="" />
+        </Field>
+        <Field Required="true" Name="學年度" Description="學年度" >
+            <Validate AutoCorrect="False" Description="「學年度」僅允許「100~999」。" ErrorType="Error" Validator="學年度合理範圍" When="" />
+        </Field>
+        <Field Required="true" Name="學期" Description="學期" >
+            <Validate AutoCorrect="False" Description="「學期」僅允許「0、1、2」。" ErrorType="Error" Validator="學期列舉" When="" />
+        </Field>
+        <Field Required="true" Name="階段別" Description="階段別" >
+            <Validate AutoCorrect="False" Description="「階段別」僅允許「1、2」。" ErrorType="Error" Validator="階段別列舉" When="" />
+        </Field>
+    </FieldList>
+
+    <ValidatorList>
+        <FieldValidator Name="不可空白" Type="STRINGLENGTH">
+            <MinLength>1</MinLength>
+        </FieldValidator>
+        <FieldValidator Name="學年度合理範圍" Type="Integer">
+            <MinValue>100</MinValue>
+            <MaxValue>999</MaxValue>
+        </FieldValidator>
+        <FieldValidator Name="學期列舉" Type="Enumeration">
+            <Item Value="0" />
+            <Item Value="1" />
+            <Item Value="2" />
+        </FieldValidator>
+        <FieldValidator Name="階段別列舉" Type="Enumeration">
+            <Item Value="1" />
+            <Item Value="2" />
+        </FieldValidator>
+    </ValidatorList>
+    <ConditionList/>
+</ValidateRule>
